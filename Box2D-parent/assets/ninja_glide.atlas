@@ -1,0 +1,55 @@
+ninja_glide.png
+size: 1723, 1242
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+pma: false
+Glide
+  bounds: 1, 828, 413, 432
+  offsets: 1, 4, 443, 454
+  rotate: 90
+  index: 0
+Glide
+  bounds: 1294, 414, 413, 430
+  offsets: 0, 6, 443, 454
+  index: 1
+Glide
+  bounds: 432, 414, 412, 429
+  offsets: 0, 8, 443, 454
+  rotate: 90
+  index: 2
+Glide
+  bounds: 431, 1, 411, 429
+  offsets: 0, 10, 443, 454
+  rotate: 90
+  index: 3
+Glide
+  bounds: 862, 1, 411, 429
+  offsets: 0, 12, 443, 454
+  rotate: 90
+  index: 4
+Glide
+  bounds: 1, 1, 410, 428
+  offsets: 0, 14, 443, 454
+  rotate: 90
+  index: 5
+Glide
+  bounds: 1293, 1, 411, 429
+  offsets: 0, 12, 443, 454
+  rotate: 90
+  index: 6
+Glide
+  bounds: 1, 414, 411, 429
+  offsets: 0, 10, 443, 454
+  rotate: 90
+  index: 7
+Glide
+  bounds: 863, 414, 412, 429
+  offsets: 0, 8, 443, 454
+  rotate: 90
+  index: 8
+Glide
+  bounds: 435, 828, 413, 430
+  offsets: 0, 6, 443, 454
+  rotate: 90
+  index: 9

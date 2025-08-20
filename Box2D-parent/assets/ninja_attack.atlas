@@ -1,0 +1,51 @@
+ninja_attack.png
+size: 1960, 1019
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+pma: false
+Attack_
+  bounds: 1671, 1, 288, 437
+  offsets: 46, 40, 536, 495
+  index: 0
+Attack_
+  bounds: 1443, 740, 278, 439
+  offsets: 46, 41, 536, 495
+  rotate: 90
+  index: 1
+Attack_
+  bounds: 1443, 440, 298, 441
+  offsets: 17, 41, 536, 495
+  rotate: 90
+  index: 2
+Attack_
+  bounds: 531, 531, 490, 440
+  offsets: 46, 41, 536, 495
+  index: 3
+Attack_
+  bounds: 852, 1, 494, 432
+  offsets: 42, 41, 536, 495
+  rotate: 90
+  index: 4
+Attack_
+  bounds: 428, 1, 528, 422
+  offsets: 8, 40, 536, 495
+  rotate: 90
+  index: 5
+Attack_
+  bounds: 1, 1, 528, 425
+  offsets: 8, 36, 536, 495
+  rotate: 90
+  index: 6
+Attack_
+  bounds: 1, 531, 528, 425
+  offsets: 8, 36, 536, 495
+  index: 7
+Attack_
+  bounds: 1023, 497, 418, 424
+  offsets: 13, 41, 536, 495
+  index: 8
+Attack_
+  bounds: 1286, 1, 383, 432
+  offsets: 41, 40, 536, 495
+  index: 9

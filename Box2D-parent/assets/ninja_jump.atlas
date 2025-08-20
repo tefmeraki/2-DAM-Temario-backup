@@ -1,0 +1,46 @@
+ninja_jump.png
+size: 1986, 465
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+pma: false
+Jump_
+  bounds: 271, 1, 284, 439
+  offsets: 62, 14, 362, 483
+  index: 0
+Jump_
+  bounds: 1, 1, 268, 463
+  offsets: 54, 0, 362, 483
+  index: 1
+Jump_
+  bounds: 557, 1, 255, 435
+  offsets: 43, 30, 362, 483
+  index: 2
+Jump_
+  bounds: 814, 1, 255, 434
+  offsets: 42, 31, 362, 483
+  index: 3
+Jump_
+  bounds: 814, 1, 255, 434
+  offsets: 42, 31, 362, 483
+  index: 4
+Jump_
+  bounds: 814, 1, 255, 434
+  offsets: 42, 31, 362, 483
+  index: 5
+Jump_
+  bounds: 1071, 1, 276, 427
+  offsets: 41, 38, 362, 483
+  index: 6
+Jump_
+  bounds: 1349, 1, 303, 422
+  offsets: 20, 45, 362, 483
+  index: 7
+Jump_
+  bounds: 1654, 1, 331, 414
+  offsets: 5, 53, 362, 483
+  index: 8
+Jump_
+  bounds: 1654, 1, 331, 414
+  offsets: 5, 53, 362, 483
+  index: 9

@@ -1,0 +1,43 @@
+ninja_idle.png
+size: 1390, 441
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+pma: false
+Idle_
+  bounds: 1, 1, 232, 439
+  index: 0
+Idle_
+  bounds: 235, 1, 232, 439
+  index: 1
+Idle_
+  bounds: 469, 1, 230, 439
+  offsets: 2, 0, 232, 439
+  index: 2
+Idle_
+  bounds: 701, 1, 229, 438
+  offsets: 3, 0, 232, 439
+  index: 3
+Idle_
+  bounds: 932, 1, 228, 437
+  offsets: 4, 0, 232, 439
+  index: 4
+Idle_
+  bounds: 1162, 1, 227, 436
+  offsets: 5, 0, 232, 439
+  index: 5
+Idle_
+  bounds: 932, 1, 228, 437
+  offsets: 4, 0, 232, 439
+  index: 6
+Idle_
+  bounds: 701, 1, 229, 438
+  offsets: 3, 0, 232, 439
+  index: 7
+Idle_
+  bounds: 469, 1, 230, 439
+  offsets: 2, 0, 232, 439
+  index: 8
+Idle_
+  bounds: 235, 1, 232, 439
+  index: 9

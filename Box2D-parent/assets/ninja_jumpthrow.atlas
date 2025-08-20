@@ -1,0 +1,46 @@
+ninja_jumpthrow.png
+size: 1625, 834
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+pma: false
+Jump_Throw_
+  bounds: 1, 1, 299, 416
+  offsets: 49, 0, 360, 431
+  index: 0
+Jump_Throw_
+  bounds: 302, 1, 303, 410
+  offsets: 49, 6, 360, 431
+  index: 1
+Jump_Throw_
+  bounds: 612, 405, 309, 402
+  offsets: 48, 13, 360, 431
+  index: 2
+Jump_Throw_
+  bounds: 1285, 1, 339, 401
+  offsets: 21, 13, 360, 431
+  index: 3
+Jump_Throw_
+  bounds: 1278, 404, 346, 401
+  offsets: 14, 13, 360, 431
+  index: 4
+Jump_Throw_
+  bounds: 923, 405, 353, 401
+  offsets: 7, 13, 360, 431
+  index: 5
+Jump_Throw_
+  bounds: 932, 1, 351, 401
+  offsets: 9, 13, 360, 431
+  index: 6
+Jump_Throw_
+  bounds: 607, 1, 323, 402
+  offsets: 34, 13, 360, 431
+  index: 7
+Jump_Throw_
+  bounds: 305, 413, 305, 408
+  offsets: 49, 8, 360, 431
+  index: 8
+Jump_Throw_
+  bounds: 1, 419, 302, 414
+  offsets: 49, 3, 360, 431
+  index: 9

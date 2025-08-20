@@ -1,0 +1,52 @@
+ninja_dead.png
+size: 497, 2017
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+pma: false
+Dead_
+  bounds: 262, 1564, 234, 452
+  offsets: 19, 30, 482, 498
+  index: 0
+Dead_
+  bounds: 1, 1296, 266, 435
+  offsets: 7, 21, 482, 498
+  rotate: 90
+  index: 1
+Dead_
+  bounds: 1, 1, 336, 432
+  offsets: 10, 0, 482, 498
+  rotate: 90
+  index: 2
+Dead_
+  bounds: 1, 339, 379, 370
+  offsets: 25, 8, 482, 498
+  index: 3
+Dead_
+  bounds: 1, 711, 419, 300
+  offsets: 17, 19, 482, 498
+  index: 4
+Dead_
+  bounds: 1, 1013, 436, 281
+  offsets: 15, 15, 482, 498
+  index: 5
+Dead_
+  bounds: 1, 1564, 442, 259
+  offsets: 8, 17, 482, 498
+  rotate: 90
+  index: 6
+Dead_
+  bounds: 1, 1564, 442, 259
+  offsets: 8, 17, 482, 498
+  rotate: 90
+  index: 7
+Dead_
+  bounds: 1, 1564, 442, 259
+  offsets: 8, 17, 482, 498
+  rotate: 90
+  index: 8
+Dead_
+  bounds: 1, 1564, 442, 259
+  offsets: 8, 17, 482, 498
+  rotate: 90
+  index: 9

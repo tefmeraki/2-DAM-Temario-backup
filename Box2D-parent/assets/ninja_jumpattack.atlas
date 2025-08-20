@@ -1,0 +1,49 @@
+ninja_jumpattack.png
+size: 981, 1984
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+pma: false
+Jump_Attack_
+  bounds: 494, 1270, 298, 414
+  offsets: 33, 92, 504, 522
+  rotate: 90
+  index: 0
+Jump_Attack_
+  bounds: 1, 1570, 298, 413
+  offsets: 33, 92, 504, 522
+  index: 1
+Jump_Attack_
+  bounds: 679, 1570, 301, 410
+  offsets: 30, 92, 504, 522
+  index: 2
+Jump_Attack_
+  bounds: 500, 1, 471, 463
+  offsets: 33, 38, 504, 522
+  index: 3
+Jump_Attack_
+  bounds: 500, 466, 471, 460
+  offsets: 33, 38, 504, 522
+  index: 4
+Jump_Attack_
+  bounds: 1, 987, 490, 491
+  offsets: 14, 2, 504, 522
+  rotate: 90
+  index: 5
+Jump_Attack_
+  bounds: 1, 494, 495, 491
+  offsets: 9, 2, 504, 522
+  index: 6
+Jump_Attack_
+  bounds: 1, 1, 497, 491
+  offsets: 7, 2, 504, 522
+  index: 7
+Jump_Attack_
+  bounds: 498, 928, 340, 464
+  offsets: 12, 34, 504, 522
+  rotate: 90
+  index: 8
+Jump_Attack_
+  bounds: 301, 1570, 376, 411
+  offsets: 33, 92, 504, 522
+  index: 9

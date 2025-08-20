@@ -1,0 +1,56 @@
+ninja_run.png
+size: 876, 1659
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+pma: false
+Run_
+  bounds: 1, 974, 328, 433
+  offsets: 33, 11, 363, 458
+  rotate: 90
+  index: 0
+Run_
+  bounds: 1, 1, 323, 450
+  offsets: 31, 0, 363, 458
+  rotate: 90
+  index: 1
+Run_
+  bounds: 1, 651, 321, 446
+  offsets: 27, 8, 363, 458
+  rotate: 90
+  index: 2
+Run_
+  bounds: 453, 1, 352, 422
+  offsets: 0, 29, 363, 458
+  rotate: 90
+  index: 3
+Run_
+  bounds: 1, 1304, 354, 427
+  offsets: 7, 17, 363, 458
+  rotate: 90
+  index: 4
+Run_
+  bounds: 430, 1323, 328, 427
+  offsets: 33, 17, 363, 458
+  rotate: 90
+  index: 5
+Run_
+  bounds: 1, 326, 323, 448
+  offsets: 30, 2, 363, 458
+  rotate: 90
+  index: 6
+Run_
+  bounds: 436, 1005, 316, 431
+  offsets: 28, 23, 363, 458
+  rotate: 90
+  index: 7
+Run_
+  bounds: 449, 685, 318, 405
+  offsets: 29, 47, 363, 458
+  rotate: 90
+  index: 8
+Run_
+  bounds: 451, 355, 328, 422
+  offsets: 33, 22, 363, 458
+  rotate: 90
+  index: 9

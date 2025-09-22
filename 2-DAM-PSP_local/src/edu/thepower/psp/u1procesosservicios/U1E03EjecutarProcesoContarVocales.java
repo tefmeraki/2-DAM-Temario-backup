@@ -20,7 +20,8 @@ public class U1E03EjecutarProcesoContarVocales {
 	private static final String FICH_IN_VOCALES = "recursos\\vocales.txt";
 	private static final String DIR_OUTPUT = "output\\";
 	private static final String CLASE = "edu.thepower.psp.u1procesosservicios.U1E03ContarVocales";
-	private static final String CLASSPATH = "C:\\Users\\zc00963\\eclipse-workspace\\2-DAM-PSP_local\\bin";
+	//private static final String CLASSPATH = "C:\\Users\\zc00963\\eclipse-workspace\\2-DAM-PSP_local\\bin";
+	private static final String CLASSPATH = "C:\\Users\\zc00963\\git\\2-DAM-Temario-backup\\2-DAM-PSP_local\\bin";
 	private static final String FICH_OUT_CONTAR = "contar_";
 	private static final String FICH_OUT_ERROR = "error_";
 	private static final String EXT_TXT = ".txt";

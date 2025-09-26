@@ -10,6 +10,12 @@ public class U1E02Sumador {
 
 	public int sumar (int n1, int n2) {
 		int acumulador = 0;
+		if (n1 > n2) {
+			int auxiliar = n1;
+			n1 = n2;
+			n2 = auxiliar;
+		}
+		
 		for (int i = n1; i <= n2; i++)
 			acumulador += i;
 		

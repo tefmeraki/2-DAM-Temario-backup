@@ -34,6 +34,8 @@ public class U1E03EjecutarProcesoContarVocales {
 		File f = new File("output");
 		if (f.mkdir())
 			System.out.println("Directorio output creado.");
+		else
+			System.err.println("El directorio output ya existe.");
 		
 		
 		try {

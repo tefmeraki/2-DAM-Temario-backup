@@ -11,16 +11,18 @@ import java.io.File;
 import java.io.InputStreamReader;
 
 public class U1E02EjecutarProcesoJava {
-
+	private static final String JAVA = "java";
+	private static final String CP = "-cp";
+	private static final String CLASE = "edu.thepower.psp.u1procesosservicios.U1E02Sumador";
+	//String classpath = "C:\\Users\\zc00963\\eclipse-workspace\\2-DAM-PSP_local\\bin";
+	private static final String CLASSPATH = "C:\\Users\\zc00963\\git\\2-DAM-Temario-backup\\2-DAM-PSP_local\\bin";
+	//String jre = "C:\\Users\\zc00963\\.p2\\pool\\plugins\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.5.v20241023-1957\\jre\\bin\\java.exe";
+	
 	public void lanzarSumador (int n1, int n2) {
-		String clase = "edu.thepower.psp.u1procesosservicios.U1E02Sumador";
-		//String classpath = "C:\\Users\\zc00963\\eclipse-workspace\\2-DAM-PSP_local\\bin";
-		String classpath = "C:\\Users\\zc00963\\git\\2-DAM-Temario-backup\\2-DAM-PSP_local\\bin";
-		//String jre = "C:\\Users\\zc00963\\.p2\\pool\\plugins\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.5.v20241023-1957\\jre\\bin\\java.exe";
 		
 		try {
 			//ProcessBuilder pb = new ProcessBuilder("java", "-version");
-			ProcessBuilder pb = new ProcessBuilder("java", "-cp" , classpath, clase, String.valueOf(n1), String.valueOf(n2));
+			ProcessBuilder pb = new ProcessBuilder(JAVA, CP , CLASSPATH, CLASE, String.valueOf(n1), String.valueOf(n2));
 			
 			/*
 			// 1. Recuperar resultado y errores de la ejecución del proceso

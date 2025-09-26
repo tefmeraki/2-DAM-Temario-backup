@@ -8,7 +8,7 @@ package edu.thepower.psp.u2programacionmultihilo;
  * 
  */
 
-public class U2E01SleepingInterrupting {
+public class U2E012SleepingInterrupting {
 	
 	static class MiThread implements Runnable {
 

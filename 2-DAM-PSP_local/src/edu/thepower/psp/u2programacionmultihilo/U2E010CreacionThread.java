@@ -10,7 +10,7 @@ package edu.thepower.psp.u2programacionmultihilo;
  * 
  */
 
-public class U2E01CreacionThread {
+public class U2E010CreacionThread {
 	
 	// Como una clase que implementa la interfaz Runnable
 	static class MiThread1 implements Runnable {

@@ -11,7 +11,7 @@ import java.util.Queue;
  * 
  */
 
-public class U2E03ProductorConsumidor {
+public class U2E041ProductorConsumidorWaitNotify {
 	private static final Queue<Integer> cola = new LinkedList<>();
 	private static final int LIMITE = 5;
 	
@@ -20,13 +20,15 @@ public class U2E03ProductorConsumidor {
 			int valor = 0;
 			while (true) {
 				synchronized (cola) {
-					while (cola.size() == LIMITE) // Uso de while en lugar de if para comprobar, cuando vuelva a activarse el hilo, que hay espacio en la cola
+					while (cola.size() == LIMITE) {// Uso de while en lugar de if para comprobar, cuando vuelva a activarse el hilo, que hay espacio en la cola
 						try {					  // Podría haber otro productor que hubiera vuelto a ocupar el hueco que, a priori, había quedado
 							cola.wait();
 						} catch (InterruptedException e) {}
+					}
+					
 					cola.add(valor++);
 					System.out.println("Producido: " + (valor-1));
-					cola.notify();
+					cola.notifyAll(); // Notifica a todos los consumidores
 				}
 			}
 		});
@@ -34,13 +36,14 @@ public class U2E03ProductorConsumidor {
 		Thread consumidor = new Thread (() -> {
 			while (true) {
 				synchronized (cola) {
-					while (cola.isEmpty())
+					while (cola.isEmpty()) {
 						try {
 							cola.wait( 	);
 						} catch (InterruptedException e) {}
+					}
 					int v = cola.remove();
 					System.out.println("Consumido " + v);
-					cola.notify();
+					cola.notifyAll(); // Notifica a todos los productores. 
 				}
 			}
 		});

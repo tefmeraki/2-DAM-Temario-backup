@@ -8,11 +8,11 @@ import java.util.Queue;
  * https://oscarmaestre.github.io/servicios/textos/tema2.html
  * U2E04: deadlock demo solucionado.
  * Para evitar el bloqueo (deadlock) en el ejercicio anterior, es necesario que ambos hilos bloqueen los recursos en el mismo orden.
- * Al bloquear los recursos en el mismo orden, ninguno de los 2 hilos va a esperar a algún recurso bloqueado por el otro.
+ * Al bloquear los recursos en el mismo orden, ninguno de los 2 hilos va a esperar por alguno de los recursos bloqueados por el otro.
  * 
  */
 
-public class U2E04DeadlockDemoSolved {
+public class U2E03DeadlockDemoSolved {
 	
 	private static Object lock1 = new Object();
 	private static Object lock2 = new Object();

@@ -1,7 +1,8 @@
 package edu.thepower.psp.u2programacionmultihilo;
 
 /*
-* Tema 2. Programación multihilo.
+ * Tema 2. Programación multihilo.
+ *** Problema condición de carrera: solución (1) utilizando el modificador synchronized para garantizar el bloqueo de la ejecución de código.
  * https://oscarmaestre.github.io/servicios/textos/tema2.html
  * U2E02: crear dos hilos, uno que incrementa una variable compartida estática y otro que la decrementa. Ambos se ejecutan las mismas veces. 
  * El resultado final debería ser 0, pero no es lo que suele ocurrir.
@@ -10,7 +11,7 @@ package edu.thepower.psp.u2programacionmultihilo;
  * 
  */
 
-public class U2E02VariableCompartidaCondicionCarrera1Sync {
+public class U2E02VariableCompartidaCondicionCarrera11Sync {
 	private static int contador = 0;
 	
 	// Aplicación de synchronized al método que se utiliza para modificar el valor de la variable contador

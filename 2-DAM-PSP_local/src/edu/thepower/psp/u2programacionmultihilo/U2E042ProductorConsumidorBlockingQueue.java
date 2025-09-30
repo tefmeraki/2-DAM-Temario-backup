@@ -13,7 +13,7 @@ import java.util.concurrent.BlockingQueue;
  * 
  */
 
-public class U2E03ProductorConsumidorBlockingQueue {
+public class U2E042ProductorConsumidorBlockingQueue {
 	private static final int LIMITE = 5;
 	private static final BlockingQueue<Integer> cola = new ArrayBlockingQueue<Integer>(LIMITE);
 	

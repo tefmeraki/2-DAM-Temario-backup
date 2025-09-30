@@ -34,9 +34,9 @@ public class U2E011CallableFuture2Solucion {
 
 	public static void main(String[] args) {
 		// Creamos un servicio con un solo thread
-		ExecutorService executorService = Executors.newSingleThreadExecutor();
+		ExecutorService executor = Executors.newSingleThreadExecutor();
 		
-		Future<Integer> future = executorService.submit(() -> {
+		Future<Integer> future = executor.submit(() -> {
 			// Es opcional controlar InterruptedException. El método call() que se implementa, de la Interfaz Callable, ya lanza Exception
 			// Incluimos bloque try/catch para dejarlo más completo
 			
@@ -58,5 +58,7 @@ public class U2E011CallableFuture2Solucion {
 		} catch (TimeoutException e) {
 			System.err.println("No se pudo copmletar la tarea antes de que expirara el plazo.");
 		}
+		
+		executor.shutdown();
 	}
 }

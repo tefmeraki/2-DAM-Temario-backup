@@ -13,7 +13,7 @@ import java.util.Queue;
  * 
  */
 
-public class U2E04DeadlockDemo {
+public class U2E03DeadlockDemo {
 	
 	private static Object lock1 = new Object();
 	private static Object lock2 = new Object();

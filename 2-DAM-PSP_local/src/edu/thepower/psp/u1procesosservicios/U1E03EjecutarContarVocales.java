@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class U1E03EjecutarProcesoContarVocales {
+public class U1E03EjecutarContarVocales {
 	private static final String FICH_IN_VOCALES = "recursos\\vocales.txt";
 	private static final String DIR_OUTPUT = "output\\";
 	private static final String CLASE = "edu.thepower.psp.u1procesosservicios.U1E03ContarVocales";
@@ -51,10 +51,10 @@ public class U1E03EjecutarProcesoContarVocales {
 	
 	public static void main(String[] args) {
 		char[] vocales = new char[] {'a', 'e', 'i', 'o', 'u'};
-		U1E03EjecutarProcesoContarVocales[] procesos = new U1E03EjecutarProcesoContarVocales[vocales.length];
+		U1E03EjecutarContarVocales[] procesos = new U1E03EjecutarContarVocales[vocales.length];
 		
 		for (int i = 0; i < 5; i++) {
-			procesos[i] = new U1E03EjecutarProcesoContarVocales();
+			procesos[i] = new U1E03EjecutarContarVocales();
 			procesos[i].lanzarProceso(FICH_IN_VOCALES, vocales[i]);
 		}
 		

@@ -30,7 +30,9 @@ public class U2E011CreacionPoolThreads {
 
 		executorService.submit(() -> {System.out.println("*** Nuevo saludo desde el thread " + Thread.currentThread().getName());});
 		
-		// Apagar el ExecutorService
+		// Apagar el ExecutorService.
+		// La parada se hace de forma ordenada, y no se completa hasta que no han finalizado los threads en ejecución.
+		// Lo que no permite el comando shoudown() es que se ejecuten nuevos submit()
 		executorService.shutdown();
 	}
 

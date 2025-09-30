@@ -9,8 +9,9 @@ package edu.thepower.psp.u1procesosservicios;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.util.Random;
 
-public class U1E02EjecutarProcesoJava {
+public class U1E02EjecutarSumador {
 	private static final String JAVA = "java";
 	private static final String CP = "-cp";
 	private static final String CLASE = "edu.thepower.psp.u1procesosservicios.U1E02Sumador";
@@ -79,9 +80,11 @@ public class U1E02EjecutarProcesoJava {
 	}
 	
 	public static void main(String[] args) {
-		U1E02EjecutarProcesoJava u1e02 = new U1E02EjecutarProcesoJava();
-		u1e02.lanzarSumador(1, 50);
-		u1e02.lanzarSumador(100, 150);
+		Random r = new Random();
+		U1E02EjecutarSumador u1e02 = new U1E02EjecutarSumador();
+		for (int i = 0;i < 5;i++) // Se ejecutan 5 procesos en paralelo
+			u1e02.lanzarSumador(r.nextInt(1, 100), r.nextInt(1, 100));
+		
 		System.out.println("*** Fin del proceso ***");
 	}
 

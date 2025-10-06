@@ -50,6 +50,13 @@ public class U2E05TransferenciasMultiThread {
 	}
 
 	public static void transferir (CuentaCorriente from, CuentaCorriente to, float importe) {
+		/*
+		 * La comparación de los hashcodes de las cuentas bancarias se utiliza para determinar un orden consistente de adquisición de bloqueos (locks)
+		 * cuando se sincroniza sobre dos objetos de tipo cuenta en el método de transferencia.
+		 * El objetivo es evitar un deadlock en escenarios concurrentes donde dos hilos podrían intentar transferir dinero simultáneamente entre el mismo
+		 * par de cuentas, pero en direcciones opuestas.
+		 */
+		
 		CuentaCorriente primera = from.hashCode() < to.hashCode() ? from : to;
 		CuentaCorriente segunda = from.hashCode() < to.hashCode() ? to : from;
 		synchronized (primera) {

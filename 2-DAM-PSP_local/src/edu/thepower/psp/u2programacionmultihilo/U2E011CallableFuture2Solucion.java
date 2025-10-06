@@ -18,7 +18,7 @@ package edu.thepower.psp.u2programacionmultihilo;
  * Uso de Callable y Future
  * ************************
  * Java proporciona la interfaz Callable, que es similar a Runnable pero su método call() devuelve un valor y puede generar excepciones controladas.
- * Se puede hacer el submit() del objeto Callable a un ExecutorService y obtener un obeto de tipo Future que represente el resultado,
+ * Se puede hacer el submit() del objeto Callable a un ExecutorService y obtener un objeto de tipo Future que represente el resultado,
  * lo que le permitirá esperar a que el valor esté listo de una manera segura y estructurada.
  */
 

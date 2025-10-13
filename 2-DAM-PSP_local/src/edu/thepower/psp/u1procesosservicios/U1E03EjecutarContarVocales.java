@@ -40,8 +40,8 @@ public class U1E03EjecutarContarVocales {
 		
 		try {
 			ProcessBuilder pb = new ProcessBuilder("java", "-cp", CLASSPATH, CLASE, inputFile, String.valueOf(vocal));
-			pb.redirectOutput(new File(DIR_OUTPUT + FICH_OUT_CONTAR + vocal + EXT_TXT));
-			pb.redirectError(new File(DIR_OUTPUT + FICH_OUT_ERROR + vocal + EXT_TXT));
+			pb.redirectOutput(new File(DIR_OUTPUT + FICH_OUT_CONTAR + vocal + EXT_TXT)); // Se redirige la salida a fichero
+			pb.redirectError(ProcessBuilder.Redirect.INHERIT); // Se redirigen los errores a la salida de de error del proceso padre
 			proceso = pb.start();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

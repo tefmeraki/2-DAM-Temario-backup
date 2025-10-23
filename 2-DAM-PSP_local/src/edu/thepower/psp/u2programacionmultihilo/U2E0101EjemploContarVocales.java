@@ -73,17 +73,17 @@ public class U2E0101EjemploContarVocales extends Thread {
 		// En caso contrario, crear directorio de salida
 		if (dir.exists()) {
 			System.out.println("Directorio "+ OUT_DIR + " ya existe.");
-			System.out.println("Borrando directorio y contenido.");
+			System.out.println("Borrando contenido.");
 			// Borrar archivos
 			for (File f : dir.listFiles())
 				f.delete();
-			// Borrar directorio
-			dir.delete();
 		}
 		
 		// Crear directorio de salida.
 		if (dir.mkdir())
 			System.out.println("Directorio de salida creado");
+		else
+			System.err.println("Diredtorio de salida ya existe.");
 		
 		for (int i = 0;i < VOCALES.length;i++) {
 			System.out.println("Nuevo thread contando " + VOCALES[i] + "...");

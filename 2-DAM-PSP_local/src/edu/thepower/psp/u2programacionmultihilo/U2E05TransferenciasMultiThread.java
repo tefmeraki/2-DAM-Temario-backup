@@ -49,7 +49,7 @@ public class U2E05TransferenciasMultiThread {
 		}
 	}
 
-	public static void transferir (CuentaCorriente from, CuentaCorriente to, float importe) {
+	public static void transferir (CuentaCorriente cc1, CuentaCorriente cc2, float importe) {
 		/*
 		 * La comparación de los hashcodes de las cuentas bancarias se utiliza para determinar un orden consistente de adquisición de bloqueos (locks)
 		 * cuando se sincroniza sobre dos objetos de tipo cuenta en el método de transferencia.
@@ -57,12 +57,12 @@ public class U2E05TransferenciasMultiThread {
 		 * par de cuentas, pero en direcciones opuestas.
 		 */
 		
-		CuentaCorriente primera = from.hashCode() < to.hashCode() ? from : to;
-		CuentaCorriente segunda = from.hashCode() < to.hashCode() ? to : from;
+		CuentaCorriente primera = cc1.hashCode() < cc2.hashCode() ? cc1 : cc2;
+		CuentaCorriente segunda = cc1.hashCode() < cc2.hashCode() ? cc2 : cc1;
 		synchronized (primera) {
 			synchronized (segunda) {
-				from.retirar(importe);
-				to.ingresar(importe);
+				cc1.retirar(importe);
+				cc2.ingresar(importe);
 			}
 		}
 	}

@@ -27,27 +27,33 @@ import java.util.Queue;
  * 
  */
 
-public class U2E05TransferenciasMultiThread {
-
-	static class CuentaCorriente {
-		private float saldo;
-		
-		public CuentaCorriente (float saldo) {
-			this.saldo = saldo;
-		}
-		
-		public float getSaldo() {
-			return saldo;
-		}
-		
-		public void ingresar (float importe) {
-			saldo += importe;
-		}
-		
-		public void retirar (float importe) {
-			saldo -= importe;
-		}
+class CuentaCorriente {
+	private float saldo;
+	
+	public CuentaCorriente (float saldo) {
+		this.saldo = saldo;
 	}
+	
+	public float getSaldo() {
+		return saldo;
+	}
+	
+	public void ingresar (float importe) {
+		saldo += importe;
+	}
+	
+	public boolean retirar (float importe) {
+		boolean resultado = true;
+		if (saldo >= importe)
+			saldo -= importe;
+		else
+			resultado = false;
+		
+		return resultado;
+	}
+}
+
+public class U2E05TransferenciasMultiThread {
 
 	public static void transferir (CuentaCorriente cc1, CuentaCorriente cc2, float importe) {
 		/*
@@ -61,8 +67,9 @@ public class U2E05TransferenciasMultiThread {
 		CuentaCorriente segunda = cc1.hashCode() < cc2.hashCode() ? cc2 : cc1;
 		synchronized (primera) {
 			synchronized (segunda) {
-				cc1.retirar(importe);
-				cc2.ingresar(importe);
+				// Solo ingresamos en cc2 si retirar de cc1 devuelve true (hay saldo suficiente).
+				if (cc1.retirar(importe))
+					cc2.ingresar(importe);
 			}
 		}
 	}

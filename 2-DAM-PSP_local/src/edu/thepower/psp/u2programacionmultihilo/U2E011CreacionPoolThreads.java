@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /*
 * Tema 2. Programación multihilo.
@@ -21,7 +22,9 @@ import java.util.concurrent.TimeUnit;
 public class U2E011CreacionPoolThreads {
 	// Mapa para contar el número de veces que es utilizado cada uno de los threads del pool
 	// Alternativa, utilizar Collections.synchronizedMap(new HashMap<>()) para tener un mapa thread-safe map que sincroniza el acceso consurrente.
-	private static Map<String, Integer> contadores = new HashMap<String, Integer>();
+	private static Map<String, Integer> contadores = new HashMap<>();
+	//private static Map<String, AtomicInteger> contadores = new ConcurrentHashMap<>();
+	
 
 	public static void main(String[] args) {
 		// Se muestra el número de CPUs virtuales disponibles, límite de threads que pueden ejecutarse simultáneamente.
@@ -37,6 +40,9 @@ public class U2E011CreacionPoolThreads {
 											  contadores.put(Thread.currentThread().getName(), contadores.getOrDefault(Thread.currentThread().getName(), 0) + 1);
 										  }
 										 });
+										// Utilizando ConcurrentHashMap y AtomicInteger
+										// contadores.computeIfAbsent(Thread.currentThread().getName(), (k -> new AtomicInteger())).incrementAndGet();
+										
 
 		executorService.submit(() -> {System.out.println("*** Nuevo saludo desde el thread " + Thread.currentThread().getName());});
 		

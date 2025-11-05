@@ -17,49 +17,55 @@ package edu.thepower.psp.eval;
  * 
  */
 
+interface Equipo {
+	public void realizarTrabajo (String documento);
+}
+
 public class PSPT1P2Corregido {
-	static class Impresora {
-	    public synchronized void imprimir(String doc) {
-	        System.out.println(Thread.currentThread().getName() + " imprime: " + doc);
+	static class Impresora implements Equipo{
+	    @Override
+		public String toString() {
+			return "Impresora";
+		}
+
+		@Override
+		public void realizarTrabajo(String documento) {
+			System.out.println(Thread.currentThread().getName() + " imprime: " + documento);
 	        try {
 	        	Thread.sleep(50);
 	        } catch (InterruptedException ignored) {
 	        	
 	        }
-	    }
-
-		@Override
-		public String toString() {
-			return "Impresora";
 		}
 	}
 
-	static class Scanner {
-	    public synchronized void scan(String doc) {
-	        System.out.println(Thread.currentThread().getName() + " escanea: " + doc);
+	static class Scanner implements Equipo{
+		@Override
+		public String toString() {
+			return "Scanner";
+		}
+
+		@Override
+		public void realizarTrabajo(String documento) {
+			System.out.println(Thread.currentThread().getName() + " escanea: " + documento);
 	        try {
 	        	Thread.sleep(50);
 	        } catch (InterruptedException ignored){
 	        	
 	        }
-	    }
-
-		@Override
-		public String toString() {
-			return "Scanner";
 		}
 	}
 	
-	public static void procesarTrabajo (Impresora impresora, Scanner scanner, String trabajo) {
-		Object recurso1 = impresora.hashCode() < scanner.hashCode() ? impresora : scanner;
-		Object recurso2 = impresora.hashCode() < scanner.hashCode() ? scanner : impresora;
+	public static void procesarTrabajo (Equipo equipo1, Equipo equipo2, String trabajo) {
+		Equipo recurso1 = equipo1.hashCode() < equipo2.hashCode() ? equipo1 : equipo2;
+		Equipo recurso2 = equipo1.hashCode() < equipo2.hashCode() ? equipo2 : equipo1;
 		
 		synchronized (recurso1) {
             System.out.println(Thread.currentThread().getName() + " acceso a " + recurso1.toString());
-            impresora.imprimir("Documento A");
-            synchronized (scanner) {
+            recurso1.realizarTrabajo(trabajo);
+            synchronized (recurso2) {
             	System.out.println(Thread.currentThread().getName() + " acceso a " + recurso2.toString());
-                scanner.scan("Documento A");
+                recurso2.realizarTrabajo(trabajo);
             }
         }
 	}
@@ -73,7 +79,7 @@ public class PSPT1P2Corregido {
         }, "Tarea_A");
         
         Thread tB = new Thread(() -> {
-        	procesarTrabajo(impresora, scanner, "Documento B");
+        	procesarTrabajo(scanner, impresora, "Documento B");
         }, "Tarea_B");
         
         tA.start();

@@ -47,16 +47,17 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 
 class Pedido {
+	private static AtomicInteger idContador = new AtomicInteger();
 	private static SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 	
 	private String id;
 	private String cliente;
 	private long fecha;
 	
-	public Pedido (String id, String cliente) {
-		this.id = id;
+	public Pedido (String cliente) {
+		this.id = String.valueOf(idContador.incrementAndGet());
 		this.cliente = cliente;
-		fecha = System.currentTimeMillis();
+		this.fecha = System.currentTimeMillis();
 	}
 	
 	@Override
@@ -71,23 +72,18 @@ public class PSPT1P1 implements Runnable{
 	private final static String CLIENTE = "Cliente-";
 	private final static Random generaIDCliente = new Random ();
 	
-	private static AtomicInteger idContador = new AtomicInteger();
-	private static ReentrantLock lock = new ReentrantLock();
+		private static ReentrantLock lock = new ReentrantLock();
 	private static List<Pedido> pedidos = new ArrayList<>();
 	private static Map<String, AtomicInteger> pedidosCliente = new ConcurrentHashMap<>();
-
-	private static int getId () {
-		return idContador.incrementAndGet();
-	}
 
 	@Override
 	public void run() {
 		for (int i=0;i < NUM_PEDIDOS;i++) {
 			String cliente = CLIENTE + generaIDCliente.nextInt(0, 10);
-			String id = String.valueOf(getId());
+			
 			lock.lock();
 			try {
-				pedidos.add(new Pedido(id, cliente));
+				pedidos.add(new Pedido(cliente));
 			} finally {
 				lock.unlock();
 			}

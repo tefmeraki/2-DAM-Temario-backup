@@ -15,15 +15,14 @@ class GestorCliente implements Runnable {
 	
 	public GestorCliente (Socket socket) {
 		this.socket = socket;
+		// En nombre se almacena la IP (y puerto) origen de la comunicación.
+		nombre = "[" + socket.getInetAddress().getHostName() + ":" + socket.getPort() + "] ";
 	}
 	
 	@Override
 	public void run() {
-		// Obtenemos el nombre del thread
-		this.nombre = "[" + Thread.currentThread().getName() + "] ";
-		
 		try {
-			System.out.println(nombre + "Solicitud atendida por " + nombre + " en el puerto " + socket.getLocalPort());
+			System.out.println(nombre + "Creada nueva conexión de cliente.");
 			InputStream is = socket.getInputStream();
 			BufferedReader br = new BufferedReader(new InputStreamReader(is));
 			OutputStream os = socket.getOutputStream();
@@ -34,8 +33,7 @@ class GestorCliente implements Runnable {
 				writer.println(linea.toLowerCase());
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Error en la conexión: " + e.getMessage());
 		}
 		
 		System.out.println(nombre + "*** Finalizada la conexión por el cliente.");

@@ -1,5 +1,10 @@
 package edu.thepower.psp.u3comunicacionesenred;
 
+/*
+ * Uso: U3E02EchoServerServidor <número_puerto>
+ * Donde <número_puerto> debe ser un valor entero entre 1.024 y 65.535
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,34 +15,40 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class U3E02EchoServerServidor {
-
+	private static final String SALIR = "/salir";
+	
 	public static void main(String[] args) {
 		int puerto = 0;
-		if (args.length == 0)
-			System.out.println("Es necesario proporcionar el puerto en el que se recibirán las solicitudes.");
-		else
-			puerto = Integer.valueOf(args[0]);
+		// Hay que proporcionar al programa, como argumento de entrada, el puerto en el que debe escuchar.
+		try {
+			puerto = U3E02EchoServerVerificadorPuerto.verificarPuerto(args);
+		} catch (IllegalArgumentException e) {
+			System.err.println("Error inicio servidor: " + e.getMessage());
+			System.exit(1);
+		}
 		
 		try (ServerSocket servidor = new ServerSocket(puerto)){
 			while (true) { // El servidor seguirá escuchando aunque el cliente se desconecte
-				System.out.println("[Servidor] Esperando solicitudes en el puerto " + puerto);
+				System.out.println("Esperando solicitudes en el puerto " + String.format("%,d", puerto));
 				Socket socket = servidor.accept();
+				System.out.println("Cliente conectado. Origen: " + socket.getInetAddress() + ":" + socket.getPort());
 				InputStream is = socket.getInputStream();
 				BufferedReader br = new BufferedReader(new InputStreamReader(is));
 				OutputStream out = socket.getOutputStream();
 				PrintWriter writer = new PrintWriter(out, true);
-				String linea;
-				while ((linea = br.readLine()) != null) {
-					System.out.println("[Servidor] Recibido del cliente: " + linea);
-					writer.println("Esto es lo recibido, pasado a minúsculas: " + linea.toLowerCase());
+				String mensaje;
+				// En esta opción, al cerrarse el socket cliente, llega al final del flujo EOF, y el readLine recibe null.
+				// while ((mensaje = br.readLine().trim()) != null) {
+				while ((mensaje = br.readLine().trim()) != null && !mensaje.equalsIgnoreCase(SALIR)) { 
+					System.out.println("Recibido del cliente: " + mensaje);
+					// Se devuelve lo que se ha recibido pasado a minúsculas
+					writer.println(mensaje.toLowerCase());
 				}
 				
-				System.out.println("[Servidor] Cliente desconectado.");
+				System.out.println("*** Cliente desconectado.");
 			}
-			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error en lectura/escritura soscket: " + e.getMessage());
 		}
 	}
-
 }

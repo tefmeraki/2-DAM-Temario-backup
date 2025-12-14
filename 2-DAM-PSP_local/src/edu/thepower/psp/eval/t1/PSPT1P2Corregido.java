@@ -1,4 +1,4 @@
-package edu.thepower.psp.eval;
+package edu.thepower.psp.eval.t1;
 
 /*
  * PSP - Trimestre 1, Ejercicio 2 

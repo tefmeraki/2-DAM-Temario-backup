@@ -10,6 +10,41 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PSPT2P2HTTPBibliotecaServer {
+	
+	static class Libro {
+		private String titulo;
+		private String autor;
+		
+		public Libro(String titulo, String autor) {
+			super();
+			this.titulo = titulo;
+			this.autor = autor;
+		}
+
+		public String getTitulo() {
+			return titulo;
+		}
+
+		public void setTitulo(String titulo) {
+			this.titulo = titulo;
+		}
+
+		public String getAutor() {
+			return autor;
+		}
+
+		public void setAutor(String autor) {
+			this.autor = autor;
+		}
+
+		// ToDo: devolver formato lista HTML
+		@Override
+		public String toString() {
+			return "<li>" + titulo + ", " + autor + "</li>";
+		}
+	}
+
+	
 	private static final int PUERTO = 8080;
 	private static final String HTML_INICIO = """
 			<!DOCTYPE html>
@@ -39,14 +74,14 @@ public class PSPT2P2HTTPBibliotecaServer {
 	private static final String HTTP_LENGTH = "Content-Length: ";
 	private static final String GET = "GET";
 	
-	private static final List<PSPT2P2Libro> CATALOGO;
+	private static final List<Libro> CATALOGO;
 	
 	static {
-		PSPT2P2Libro[] libros = {new PSPT2P2Libro("El Quijote", "Miguel de Cervantes"),
-				new PSPT2P2Libro("Cien años de soledad", "Gabriel García Márquez"),
-				new PSPT2P2Libro("1984", "George Orwell"),
-				new PSPT2P2Libro("Pantaleón y las visitadoras", "Mario Vargas Llosa"),
-				new PSPT2P2Libro("Dune", "Frank Herbert")};
+		Libro[] libros = {new Libro("El Quijote", "Miguel de Cervantes"),
+				new Libro("Cien años de soledad", "Gabriel García Márquez"),
+				new Libro("1984", "George Orwell"),
+				new Libro("Pantaleón y las visitadoras", "Mario Vargas Llosa"),
+				new Libro("Dune", "Frank Herbert")};
 		
 		CATALOGO = Arrays.asList(libros);
 	}
@@ -116,10 +151,7 @@ public class PSPT2P2HTTPBibliotecaServer {
 	
 	private static String listarCatalogo () {
 		StringBuffer libros = new StringBuffer();
-		libros.append("<ul>");
-		for (PSPT2P2Libro l : CATALOGO)
-			libros.append(l);
-		libros.append("</ul>");
+		CATALOGO.forEach(l -> libros.append("<ul>").append(l).append("</ul>"));
 		
 		return libros.toString();
 	}

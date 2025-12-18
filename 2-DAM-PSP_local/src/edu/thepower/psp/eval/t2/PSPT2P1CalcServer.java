@@ -55,13 +55,8 @@ public class PSPT2P1CalcServer {
 								case "SUM", "SUMA" -> RESULTADO + (operando1 + operando2); 
 								case "RES" -> RESULTADO + (operando1 - operando2);
 								case "MUL", "MULT" -> RESULTADO + (operando1 * operando2);
-								case "DIV" -> {
-									if (operando2 == 0)
-										yield "ERROR: el segundo operando no puede ser 0 (división por 0)";
-									else
-										yield RESULTADO + (operando1 / operando2);
-								} 
-								default -> "*** ERROR: el comando enviado no existe.";
+								case "DIV" -> operando2 == 0?"ERROR: el segundo operando no puede ser 0 (división por 0)": RESULTADO + (operando1 / operando2);
+								default -> "ERROR: el comando enviado no existe.";
 							};
 					}
 				} else {

@@ -27,7 +27,7 @@ public class U5E03ControlExcepcionesInseguro {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("=== CE3 INSEGURO: API con fugas de info (FileReader) ===");
+        System.out.println("=== U5E03 INSEGURO: API con fugas de info ===");
         System.out.println("1) Leer fichero config.txt");
         System.out.println("2) Parsear JSON (muy simple)");
         System.out.println("3) Conectar a BD (simulada)");

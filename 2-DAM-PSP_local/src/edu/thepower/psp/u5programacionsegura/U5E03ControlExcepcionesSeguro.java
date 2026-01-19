@@ -75,10 +75,10 @@ public class U5E03ControlExcepcionesSeguro {
 				// Aquí sí registramos stack trace, pero SOLO en logs internos
 				LOG.log(Level.SEVERE, "Error inesperado en opción " + option, e);
 
-			} finally {
-				sc.close();
 			}
 		}
+		
+		sc.close();
 	}
 
 	/**

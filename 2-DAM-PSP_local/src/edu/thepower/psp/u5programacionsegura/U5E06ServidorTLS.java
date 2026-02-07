@@ -25,7 +25,7 @@ public class U5E06ServidorTLS {
 
     private static final int PORT = 8443;
 
-    private static final String KEYSTORE_FILE = "servidor.jks";
+    private static final String KEYSTORE_FILE = "./recursos/servidor.jks";
     private static final char[] STORE_PASS = "changeit".toCharArray();
     private static final char[] KEY_PASS = "changeit".toCharArray();
 

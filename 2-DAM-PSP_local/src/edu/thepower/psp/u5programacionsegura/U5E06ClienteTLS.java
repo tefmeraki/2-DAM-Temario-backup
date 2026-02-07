@@ -1,11 +1,14 @@
 package edu.thepower.psp.u5programacionsegura;
 
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import java.io.*;
 import java.security.KeyStore;
+import java.security.cert.Certificate;
+import java.security.cert.X509Certificate;
 
 /**
  * CE5 - EJERCICIO 2 (CLIENTE TLS)
@@ -25,7 +28,7 @@ public class U5E06ClienteTLS {
     private static final String HOST = "localhost";
     private static final int PORT = 8443;
 
-    private static final String TRUSTSTORE_FILE = "cliente-truststore.jks";
+    private static final String TRUSTSTORE_FILE = "./recursos/cliente-truststore.jks";
     private static final char[] TRUST_PASS = "changeit".toCharArray();
 
     public static void main(String[] args) throws Exception {
@@ -52,6 +55,22 @@ public class U5E06ClienteTLS {
 
             String message = "HOLA SEGURO (TLS) - Ejercicio 2";
             out.println(message); // envío línea
+            
+            // Recuperamos sesión para obtener información sobre protcolo TLS
+            SSLSession session = socket.getSession();
+            System.out.println("= INFO CRIPTO CLIENTE =");
+            System.out.println("Protocolo TLS negociado: " + session.getProtocol());
+            System.out.println("Suite de cifrado negociada: " + session.getCipherSuite());
+            
+            Certificate[]  certs = session.getPeerCertificates();
+            if (certs != null && certs.length > 0 && certs[0] instanceof X509Certificate x509) {
+            	// X509Certificate x509 = (X509Certificate) certs[0]; -> equivalente a crear la variable x509 con el instanceof (Java 16)
+            	System.out.println("Subject (CN,...): " + x509.getSubjectX500Principal());
+            	System.out.println("Emisor: " + x509.getIssuerX500Principal());
+            	System.out.println("Válido desde: " + x509.getNotBefore());
+            	System.out.println("Válido hasta: " + x509.getNotAfter());
+            	System.out.println("Clave pública: " + x509.getPublicKey());
+            }
 
             String response = in.readLine(); // leo respuesta
             System.out.println("Cliente TLS envió: " + message);
